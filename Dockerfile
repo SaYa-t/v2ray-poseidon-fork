@@ -22,7 +22,7 @@ EXPOSE 80 443
 
 RUN mkdir /tmp/v2ray \
     && cd /tmp/v2ray \
-    && curl -o go.sh -L -s https://raw.githubusercontent.com/ColetteContreras/v2ray-poseidon/master/install-release.sh \
+    && curl -o go.sh -L -s https://raw.githubusercontent.com/Fate2077/v2ray-poseidon-fork/master/install-release.sh \
     && bash go.sh --version VERSION \
     && rm -rf /tmp/v2ray /v2ray-linux-64.zip
 
