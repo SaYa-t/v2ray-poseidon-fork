@@ -1,0 +1,37 @@
+{
+  "poseidon": {
+    "panel": "sspanel-webapi",
+    "license_key": "",  // 无效，或空的 license key 都会被当成社区版
+    "nodeId": 1,		// 面板里添加完节点后生成的自增ID
+    // every N seconds
+    "checkRate": 60,
+    "panelUrl": "http or https://your.domain", // SSPanel 面板地址
+    "panelKey": "your_panel_key",              // SSPanel 面板的配置文件中的 muKey 的值
+    "user": {
+      // inbound tag, which inbound you would like add user to
+      "inboundTag": "proxy",
+      "level": 0,
+      "alterId": 2,
+      "security": "none"
+    },
+    // 是否通过 HAProxy 代理协议，获取用户的真实 IP
+    "acceptProxyProtocol": false
+  },
+  "log": {
+    "loglevel": "debug"
+  },
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "vmess",
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/"
+        }
+      },
+      "tag": "proxy"
+    }
+  ],
+  "outbounds": [{ "protocol": "freedom" }]
+}

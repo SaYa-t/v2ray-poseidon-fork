@@ -1,0 +1,17 @@
+{
+  "poseidon": {
+    "panel": "v2board",         // 这一行必须存在，且不能更改
+    "nodeId": 1,                // 你的节点 ID 和 v2board 里的一致
+    "checkRate": 60,            // 每隔多长时间同步一次配置文件、用户、上报服务器信息
+    "webapi": "http or https://YOUR V2BOARD DOMAIN",// v2board 的域名信息
+    "token": "v2board token",   // v2board 和 v2ray-poseidon 的通信密钥
+
+    "speedLimit": 0, // 节点限速 单位 字节/s 0 表示不限速
+    "user": {
+      "maxOnlineIPCount": 0,  // 用户同时在线 IP 数限制 0 表示不限制
+      "speedLimit": 0         // 用户限速 单位 字节/s 0 表示不限速
+    },
+    // 是否通过 HAProxy 代理协议，获取用户的真实 IP
+    "acceptProxyProtocol": false
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "poseidon": {
+    "panel": "ssrpanel",
+    "license_key": "",  // 无效，或空的 license key 都会被当成社区版
+    "nodeId": 1,		// 面板里添加完节点后生成的自增ID
+    "checkRate": 60,
+    // 是否通过 HAProxy 代理协议，获取用户的真实 IP
+    "acceptProxyProtocol": false,
+    "user": {
+      "inboundTag": "proxy",
+      "level": 0,
+      "alterId": 2,		// 必须跟面板里设定的alterId一致
+      "security": "none"
+    },
+    "mysql": {
+      "host": "your.host.domain",	// 数据库所在的地址
+      "port": 3306,
+      "user": "ssrpanel", 	        // 数据库连接账号
+      "password": "password", 	    // 数据库连接密码
+      "dbname": "ssrpanel"	        // 数据库名称
+    }
+  },
+  "log": {
+    "loglevel": "debug"
+  },
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "vmess",
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/"
+        }
+      },
+      "tag": "proxy"
+    }
+  ],
+  "outbounds": [{ "protocol": "freedom" }]
+}
