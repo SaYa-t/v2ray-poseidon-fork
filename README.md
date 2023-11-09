@@ -25,6 +25,11 @@ curl -o go.sh -L -s https://raw.githubusercontent.com/Fate2077/v2ray-poseidon-fo
 sudo bash go.sh # Install latest version of v2ray-poseidon
 OR
 sudo bash go.sh --version v1.5.3 # Install target version of v2ray-poseidon
+
+firewall-cmd --zone=public --add-port=443/tcp --permanent
+firewall-cmd --reload
+systemctl enable v2ray
+service v2ray restart
 ```
 
 #### Uninstall
