@@ -37,6 +37,8 @@ service v2ray restart
 ```
 curl -L -s https://raw.githubusercontent.com/Fate2077/v2ray-poseidon-fork/master/uninstall.sh | sudo bash
 ```
+### config
+/etc/v2ray/config.json
 
 ### Contact
 
