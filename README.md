@@ -30,6 +30,7 @@ firewall-cmd --zone=public --add-port=443/tcp --permanent
 firewall-cmd --reload
 systemctl enable v2ray
 service v2ray restart
+sudo journalctl -u v2ray -f
 ```
 
 #### Uninstall
